@@ -1,0 +1,104 @@
+*{
+    text-align: justify; 
+    position: relative;  
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: #1e1e2f;
+    padding: 5rem 10rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* 輪播容器 */
+.carousel {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* 輪播圖片 */
+.carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* 顯示中的圖片 */
+.carousel img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+.title{
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.Tophidden,
+.Lefthidden,
+.Righthidden,
+.show {
+    transition: 1s;
+}
+
+.Tophidden {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.Lefthidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.Righthidden {
+    opacity: 0;
+    transform: translateX(300%);
+}
+.show {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+.contentBody{
+    display: grid;
+    grid: 1fr /1fr 1fr;
+    padding: 0 5rem;
+    gap: 1rem;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.contentTitle{
+    font-size: 2.5rem;
+}
+
+.contentSubtitle{
+    font-size: 2rem;
+}
+
+.contentText{
+    line-height: 200%;
+}
+
+.tipsTitle{
+    font-size: 2rem;
+}
+
+.tipsText{
+    line-height: 200%;
+}
+

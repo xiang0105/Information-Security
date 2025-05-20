@@ -1,0 +1,116 @@
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif , '粉圓體';
+}
+.container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid: 1fr 1fr/ 1fr;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/001.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    filter: blur(16px);
+    animation: bgFadeIn 1.2s ease-out forwards;
+    z-index: 0;
+}
+
+.container > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes bgFadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(16px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+.webTitle{
+    font-size: 3rem;
+    position: absolute;
+    color: #0008;
+    top: 8%;
+    left: 5%;
+    font-weight: bolder;
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: webTitleFlyIn 0.8s cubic-bezier(.42,0,.58,1) forwards;
+    animation-delay: 1.2s; /* 與背景動畫時間一致 */
+}
+
+@keyframes webTitleFlyIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+
+
+.title{
+    font-size: 3rem;
+    background-color: white;
+    text-align: center;
+    color: black;
+    writing-mode: vertical-lr; 
+    padding: .3rem;
+    opacity: 0;
+    transform: translateY(-60px);
+    animation: titleFlyIn 0.8s cubic-bezier(.42,0,.58,1) forwards;
+    animation-delay: 1.2s; /* 與背景動畫時間一致 */
+
+}
+
+
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    gap: .5rem;
+}
+
+.content{
+    font-size: 1.333rem;
+    background-color: white;
+    color: black;
+    
+    opacity: 0;
+    transform: translateY(-60px);
+    animation: titleFlyIn 0.8s cubic-bezier(.42,0,.58,1) forwards;
+    animation-delay: 1.6s; 
+}
+
+
+@keyframes titleFlyIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.danger{
+    color: red;
+}

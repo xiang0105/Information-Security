@@ -1,0 +1,86 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../assets/007.png");
+    background-size: cover;
+    padding: 5rem 10rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+.blurBg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.2); /* 可調整透明度與顏色 */
+    z-index: 0;
+    pointer-events: none; /* 不影響點擊 */
+}
+
+
+.title{
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.gameContainer{
+    width: 60%;
+}
+
+.border{
+    padding: 1.5rem;
+    margin: 1rem;
+    border: solid 1px #000;
+    border-radius: 16px;
+    background: #ffffffee;
+    color: #000;
+}
+
+.question{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.choise{
+    font-size: 1.5rem;
+    line-height: 200%;
+    min-height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.choise div:hover{
+    cursor: pointer;
+    color: #f00;
+}
+
+.explain{
+    font-size: 1.5rem;
+    line-height: 200%;
+    min-height: 35vh;   
+    display: flex;
+    flex-direction: column;
+}
+
+.next{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.next:hover{
+    cursor: pointer;
+    color: #f00;
+}
