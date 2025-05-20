@@ -9,7 +9,6 @@ import Game from './Page/Game.tsx';
 function App() {
   return (
     <>
-    
       < Navbar />
       < Home />
       < About />
