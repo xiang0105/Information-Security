@@ -24,7 +24,7 @@ function Counter({ target = 19, spacing = 1, duration = 1000, delay = 1800 }) {
         };
     }, [target, spacing, duration, delay]);
 
-    return count;
+    return <span>{count}</span>;
 }
 
 export default Counter;
