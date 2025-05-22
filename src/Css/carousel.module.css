@@ -1,40 +1,82 @@
-.carousel{
-    display: grid;
-    grid: 1fr / 1fr 8fr 1fr;
-    position: relative;
-}
-
-.carouselBody , .btn{
+.carouselBody,
+.btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
+.btn span{
+    cursor: pointer;
+}
+
+/* 輪播圖片基礎樣式 */
 img {
     position: absolute;
     top: 50%;
     left: 50%;
-    height: 80%;
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 16px;
+    opacity: 0;
+    transition: 
+        opacity 0.5s,
+        transform 0.5s,
+        box-shadow 0.5s;
+    /* 可加 box-shadow 動畫效果 */
 }
 
+/* 前一張 */
 img.prev {
     z-index: 1;
     transform: translate(-100%, -50%) scale(0.8);
-    opacity: 0.8;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.5;
 }
 
+/* 目前顯示 */
 img.active {
-    z-index: 2;
+    z-index: 999;
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
+/* 下一張 */
 img.next {
     z-index: 1;
     transform: translate(0%, -50%) scale(0.8);
-    opacity: 0.8;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.5;
+}
+
+/* 手機 RWD：360x640 */
+@media (max-width: 400px) and (max-height: 700px) {
+    img {
+        width: 90vw;
+        height: 55vw;
+        max-width: 95vw;
+        max-height: 60vw;
+        min-width: 180px;
+        min-height: 120px;
+    }
+    
+    .btn{
+        display: none;
+    }
+}
+
+/* 平板 RWD：768x1024 */
+@media (max-width: 800px) and (max-height: 1100px) {
+    img {
+        width: 60vw;
+        height: 36vw;
+        max-width: 500px;
+        max-height: 350px;
+        min-width: 220px;
+        min-height: 150px;
+    }
+
+    .btn{
+        display: none;
+    }
 }

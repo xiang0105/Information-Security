@@ -13,20 +13,20 @@ function Video(){
             if (titleRef.current) observer.observe(titleRef.current);
             return () => observer.disconnect();
         }, []);
+
     return(
-        <div className={style.container} id='Video'>
+        <section className={style.video} id='Video'>
             <div className={`${style.title} ${titleVisible ? style.show : style.hidden}`} ref={titleRef}>影片欣賞</div>
-            <div className={style.videoBody}>
+            <div className={style.container}>
                 <iframe
-                    width="60%"
-                    height="80%"
                     src="https://www.youtube.com/embed/mi33SvaDfB4"
                     title="YouTube video player"
                     allow="autoplay; encrypted-media"
                     allowFullScreen
+                    className={style.videoFrame}
                     ></iframe>
             </div>
-        </div>
+        </section>
     )
 }
 
