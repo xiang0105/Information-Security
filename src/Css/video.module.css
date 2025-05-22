@@ -29,6 +29,7 @@
 
 /* 動畫過渡與顯示/隱藏 */
 .hidden,
+.hiddenvideo,
 .show {
     transition: opacity 1s, transform 1s;
 }
@@ -37,6 +38,10 @@
     position: absolute;
     opacity: 0;
     transform: translateY(-100%);
+}
+
+.hiddenvideo{
+    opacity: 0;
 }
 
 .show {
@@ -67,8 +72,11 @@
 /* 平板 RWD：768x1024 */
 @media (max-width: 800px) and (max-height: 1100px) {
     .video {
-        padding: 2rem 1rem;
+        padding: 6rem 1rem;
         padding-top: 5rem;
+        height: 100%;
+        display: flex;
+        gap: 3rem;
     }
     .title {
         font-size: 2.2rem;

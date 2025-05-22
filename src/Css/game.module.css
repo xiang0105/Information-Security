@@ -1,4 +1,4 @@
-.container{
+.game {
     height: 100vh;
     width: 100%;
     background-image: url("../assets/007.png");
@@ -9,11 +9,9 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-
     position: relative;
     overflow: hidden;
 }
-
 
 .blurBg {
     position: absolute;
@@ -21,66 +19,102 @@
     width: 100%;
     height: 100%;
     backdrop-filter: blur(8px);
-    background: rgba(255,255,255,0.2); /* 可調整透明度與顏色 */
+    background: rgba(255,255,255,0.2);
     z-index: 0;
-    pointer-events: none; /* 不影響點擊 */
+    pointer-events: none;
 }
 
-
-.title{
+.title {
     font-size: 3.5rem;
     text-align: center;
 }
 
-.gameContainer{
+.container {
     width: 60%;
 }
 
-.border{
+.border {
     padding: 1.5rem;
     margin: 1rem;
-    border: solid 1px #000;
+    border: 1px solid #000;
     border-radius: 16px;
     background: #ffffffee;
     color: #000;
 }
 
-.question{
+.question {
     font-size: 2rem;
     text-align: center;
 }
 
-.choise{
+.choise {
     font-size: 1.5rem;
-    line-height: 200%;
+    line-height: 2;
     min-height: 35vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-
-.choise div:hover{
+.choise div:hover,
+.next:hover {
     cursor: pointer;
     color: #f00;
 }
 
-.explain{
+.explain {
     font-size: 1.5rem;
-    line-height: 200%;
-    min-height: 35vh;   
+    line-height: 2;
+    min-height: 35vh;
     display: flex;
     flex-direction: column;
 }
 
-.next{
+.next {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-top: auto;
 }
 
-.next:hover{
-    cursor: pointer;
-    color: #f00;
+
+.hidden {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 1s, transform 1s;
+}
+
+.showItem {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+    transition: opacity 1s, transform 1s;
+}
+
+
+/* RWD：手機與平板 */
+@media (max-width: 800px) {
+    .game {
+        padding: 6rem 1rem;
+        padding-top: 5rem;
+        height: 100%;
+    }
+    .container {
+        width: 95%;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .question {
+        font-size: 1.2rem;
+    }
+    .choise,
+    .explain {
+        font-size: 1rem;
+        min-height: 20vh;
+    }
+    .border {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
 }

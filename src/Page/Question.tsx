@@ -39,22 +39,24 @@ function Question() {
   const [titleVisible, setTitleVisible] = useState(false);
   
   useEffect(() => {
-          const observer = new IntersectionObserver(
-          ([entry]) => setTitleVisible(entry.isIntersecting),
+      const observer = new IntersectionObserver(
+          ([entry]) => {
+              if (entry.isIntersecting) setTitleVisible(true);
+          },
           { threshold: 0.5 }
-          );
-          if (titleRef.current) observer.observe(titleRef.current);
-          return () => observer.disconnect();
-      }, []);
+      );
+      if (titleRef.current) observer.observe(titleRef.current);
+      return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className={style.container} id='Question'>
+    <section className={style.question} id='Question'>
         <div className={`${style.title} ${titleVisible ? style.showItem : style.hidden}`} ref={titleRef}>知識分享</div>
-        <div className={style.questionContainer}>
+        <div className={style.container}>
             {questionList.map((item, index) => (
                 <>
                 <div className={style.questionList}>
-                    <div className={style.question} key={index}>{item.question}</div>
+                    <div className={style.item} key={index}>{item.question}</div>
                     <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}><FontAwesomeIcon icon={faPlus} /></div>
                     {/* 按下去後會展開 */}
                 </div>
@@ -62,7 +64,7 @@ function Question() {
                 </>
             ))}
         </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,5 +1,4 @@
-
-.container{
+.question {
     height: 100vh;
     width: 100%;
     background-image: url(../assets/006.png);
@@ -11,36 +10,37 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    color: #000
+    color: #000;
 }
 
-.title{
+.title {
     font-size: 3.5rem;
     text-align: center;
 }
 
-.questionContainer{
+.container {
     width: 60%;
     display: flex;
     flex-direction: column;
 }
 
-.questionList{
+.questionList {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
     background-color: #fff7ed;
-    color: 	#9a3412;
-    border: #fdba74;
+    color: #9a3412;
+    border: 1px solid #fdba74;
     padding: 1.5rem;
+    transition: background-color 0.3s;
 }
 
-.questionList:hover{
+.questionList:hover {
     background-color: #fed7aa;
 }
 
-.btn{
+.btn {
     margin-left: auto;
     cursor: pointer;
 }
@@ -49,30 +49,64 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: opacity 0.5s, max-height 0.5s;
+    transition: opacity 0.5s, max-height 0.5s, padding 0.5s;
     color: #4b5563;
     background-color: #fff7ed;
     font-size: 1.333rem;
-    padding: 0rem 1.5rem; 
+    padding: 0 1.5rem;
+    text-align: justify;
+}
+
+
+/* 動畫過渡與顯示/隱藏 */
+.hidden,
+.show {
+    transition: opacity 1s, transform 1s;
 }
 
 .show {
     opacity: 1;
     max-height: 200px;
-    padding: 1rem 1.5rem; 
+    padding: 1rem 1.5rem;
 }
-
 
 .hidden {
     position: absolute;
     opacity: 0;
     transform: translateY(-100%);
-    transition: 1s;
+    transition: opacity 1s, transform 1s;
 }
-
 
 .showItem {
     opacity: 1;
     transform: translateY(0) translateX(0);
-    transition: 1s;
+    transition: opacity 1s, transform 1s;
+}
+
+/* RWD 手機與平板 */
+@media (max-width: 800px) {
+    .question {
+        padding: 6rem 1rem;
+        padding-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .container {
+        width: 95%;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .questionList {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    .answer {
+        font-size: 1rem;
+        padding: 0 1rem;
+        line-height: 200%;
+    }
 }

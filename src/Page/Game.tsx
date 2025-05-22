@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState , useEffect , useRef } from 'react';
 import style from '../Css/game.module.css';
 
 
@@ -74,11 +74,24 @@ function Game() {
     setCurrentIndex(getRandomIndex(questionList.length, currentIndex));
   };
 
+  
+  const titleRef = useRef(null);
+  const [titleVisible, setTitleVisible] = useState(false);
+  
+  useEffect(() => {
+          const observer = new IntersectionObserver(
+          ([entry]) => setTitleVisible(entry.isIntersecting),
+          { threshold: 0.2 }
+          );
+          if (titleRef.current) observer.observe(titleRef.current);
+          return () => observer.disconnect();
+      }, []);
+
   return (
-    <div className={style.container} id='Game'>
+    <section className={style.game} id='Game'>
       <div className={style.blurBg}></div>
-      <div className={style.title}>趣味遊戲</div>
-      <div className={style.gameContainer}>
+      <div className={`${style.title} ${titleVisible ? style.showItem : style.hidden}`} ref={titleRef}>趣味遊戲</div>
+      <div className={style.container}>
         <div>
           <div className={`${style.question} ${style.border}`}>{currentQuestion.question}</div>
           {!answered && (
@@ -102,7 +115,7 @@ function Game() {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
