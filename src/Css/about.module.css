@@ -8,6 +8,7 @@
     flex-direction: column;
     gap: 3rem;
     text-align: justify;
+    color: white;
 }
 
 /* 輪播容器 */
