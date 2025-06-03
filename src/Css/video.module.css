@@ -1,13 +1,15 @@
 .video {
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     background-image: url(../assets/005.png);
     background-position: center;
     background-attachment: fixed;
     padding: 5rem 10rem;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .title {
@@ -24,71 +26,18 @@
 }
 
 .videoFrame{
-    height: 80%;
-    width: 60%;
-}
-
-/* 動畫過渡與顯示/隱藏 */
-.hidden,
-.hiddenvideo,
-.show {
-    transition: opacity 1s, transform 1s;
-}
-
-.hidden {
-    position: absolute;
-    opacity: 0;
-    transform: translateY(-100%);
-}
-
-.hiddenvideo{
-    opacity: 0;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0) translateX(0);
-}
-
-/* 手機 RWD：360x640 */
-@media (max-width: 400px) and (max-height: 700px) {
-    .video {
-        padding: 1.5rem 0.5rem;
-        padding-top: 5rem;
-    }
-    .title {
-        font-size: 2rem;
-    }
-    .container {
-        flex-direction: column;
-        padding: 0;
-    }
-    
-    .videoFrame{
-        height: 80%;
-        width: 90%;
-    }
+    height: 65vh;
+    width: 60vw;
 }
 
 /* 平板 RWD：768x1024 */
-@media (max-width: 800px) and (max-height: 1100px) {
-    .video {
-        padding: 6rem 1rem;
-        padding-top: 5rem;
-        height: 100%;
-        display: flex;
-        gap: 3rem;
-    }
-    .title {
-        font-size: 2.2rem;
-    }
-    .container {
-        flex-direction: column;
+@media (max-width: 1024px){
+    .video{
         padding: 0;
     }
     
     .videoFrame{
-        height: 80%;
-        width: 90%;
+        height: 65vh;
+        width: 80vw;
     }
 }

@@ -1,14 +1,14 @@
 .game {
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     background-image: url("../assets/007.png");
     background-size: cover;
     padding: 5rem 10rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 3rem;
     position: relative;
     overflow: hidden;
 }
@@ -78,27 +78,13 @@
     margin-top: auto;
 }
 
-
-.hidden {
-    position: absolute;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: opacity 1s, transform 1s;
-}
-
-.showItem {
-    opacity: 1;
-    transform: translateY(0) translateX(0);
-    transition: opacity 1s, transform 1s;
-}
-
-
 /* RWD：手機與平板 */
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     .game {
-        padding: 6rem 1rem;
+        padding: 1rem;
         padding-top: 5rem;
         height: 100%;
+        gap: 1rem;
     }
     .container {
         width: 95%;

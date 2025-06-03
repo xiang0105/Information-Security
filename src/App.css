@@ -1,7 +1,7 @@
 #root {
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
 }
 
 *{
@@ -11,15 +11,30 @@
   position: relative;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif , '粉圓體';
   box-sizing: border-box;
+  line-height: 2;
 }
-/* 
-*{
-    text-align: justify; 
-    position: relative;  
-} */
 
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
+.Tophidden {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.Lefthidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.Righthidden {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.show {
+    opacity: 1;
+    transform: none;
+}
+
+/* 動畫過渡與顯示/隱藏 */
+.Tophidden,
+.Lefthidden,
+.Righthidden,
+.show {
+    transition: opacity 1s, transform 1s;
+}
