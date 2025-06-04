@@ -113,30 +113,34 @@ function Question() {
         <div className={`${style.title}`}>常見資安攻擊與對應方法</div>
         <div className={style.container}>
             {questionList.map((item, index) => (
-                <>
+              <>
                 <div className={style.questionList}>
-                    <div className={style.item} key={index}>{item.question}</div>
-                    <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}><FontAwesomeIcon icon={faPlus} /></div>
-                    {/* 按下去後會展開 */}
+                  <div className={style.item}>{item.question}</div>
+                  <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
+                    <FontAwesomeIcon icon={faPlus} />
+                  </div>
                 </div>
-                <div className={`${style.answer} ${openIndex === index ? style.show : ''}`} key={index}>
+                <div className={`${style.answer} ${openIndex === index ? style.show : ''}`}>
                   {item.answer.split('\n').map((line, i) => (
                     <div key={i}>{line}</div>
                   ))}
                 </div>
-                </>
+              </>
             ))}
         </div><div className={`${style.title}`}>資訊安全基本守則</div>
         <div className={style.container}>
             {protectList.map((item, index) => (
-                <>
+              <>
                 <div className={style.questionList}>
-                    <div className={style.item} key={index}>{item.question}</div>
-                    <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}><FontAwesomeIcon icon={faPlus} /></div>
-                    {/* 按下去後會展開 */}
+                  <div className={style.item}>{item.question}</div>
+                  <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
+                    <FontAwesomeIcon icon={faPlus} />
+                  </div>
                 </div>
-                <div className={`${style.answer} ${openIndex === index ? style.show : ''}`} key={index}>{item.answer}</div>
-                </>
+                <div className={`${style.answer} ${openIndex === index ? style.show : ''}`}>
+                  {item.answer}
+                </div>
+              </>
             ))}
         </div>
     </section>
