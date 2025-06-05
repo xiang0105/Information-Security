@@ -7,7 +7,7 @@ function Video(){
             <div className={style.title}><div>影片欣賞</div></div>
             <div className={`${style.container}`}>
                 <iframe
-                    src="https://www.youtube.com/embed/mi33SvaDfB4"
+                    src="https://www.youtube.com/embed/rhcs8yasdGU?si=TbM9T7cqAxmcOkvH"
                     title="YouTube video player"
                     allow="autoplay; encrypted-media"
                     allowFullScreen

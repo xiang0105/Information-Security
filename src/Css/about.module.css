@@ -49,6 +49,10 @@
     font-size: 2rem;
 }
 
+.mobile_btn{
+    display: none;
+}
+
 /* 手機模式*/
 @media (max-width : 1024px) {
     .about {
@@ -95,5 +99,11 @@
     .Righthidden {
         opacity: 1;
         transform: translateX(0%);
+    }
+
+    .mobile_btn{
+        display: block;
+        margin-left: auto;
+        font-size: 2rem;
     }
 }

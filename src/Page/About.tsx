@@ -72,6 +72,7 @@ function About() {
                 <div className={`${style.information} ${titleVisible ? style.show : style.Righthidden}`}>
                     <div className={style.headline}>{EventList[showIndex].title}</div>
                     <div className={style.content}>{EventList[showIndex].content}</div>
+                    <div className={style.mobile_btn} onClick={() => {setShowIndex((prev) => (prev + 1) % EventList.length)}}   >Next</div>
                 </div>
             </div>
         </section>

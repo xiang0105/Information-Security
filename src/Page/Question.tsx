@@ -2,6 +2,7 @@ import style from '../Css/question.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useState} from 'react';
+import React from 'react';
 
 
 const questionList = [
@@ -107,13 +108,15 @@ const protectList = [
 
 function Question() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  
+  const [ansIndex , setAnsIndex ] = useState<number | null>(null);
 
   return (
     <section className={style.question} id='Question'>
         <div className={`${style.title}`}>常見資安攻擊與對應方法</div>
         <div className={style.container}>
             {questionList.map((item, index) => (
-              <>
+              <React.Fragment key={index}>
                 <div className={style.questionList} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                   <div className={style.item}>{item.question}</div>
                   <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
@@ -125,22 +128,22 @@ function Question() {
                     <div key={i}>{line}</div>
                   ))}
                 </div>
-              </>
+              </React.Fragment>
             ))}
         </div><div className={`${style.title}`}>資訊安全基本守則</div>
         <div className={style.container}>
-            {protectList.map((item, index) => (
-              <>
-                <div className={style.questionList} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
+            {protectList.map((item, ansindex) => (
+              <React.Fragment key={ansindex}>
+                <div className={style.questionList} onClick={() => setAnsIndex(ansIndex === ansindex ? null : ansindex)}>
                   <div className={style.item}>{item.question}</div>
-                  <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
+                  <div className={style.btn} onClick={() => setAnsIndex(ansIndex === ansindex ? null : ansindex)}>
                     <FontAwesomeIcon icon={faPlus} />
                   </div>
                 </div>
-                <div className={`${style.answer} ${openIndex === index ? style.show : ''}`}>
+                <div className={`${style.answer} ${ansIndex === ansindex ? style.show : ''}`}>
                   {item.answer}
                 </div>
-              </>
+              </React.Fragment>
             ))}
         </div>
     </section>
