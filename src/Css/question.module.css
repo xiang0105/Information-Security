@@ -49,14 +49,20 @@
 
 .answer {
     opacity: 0;
-    max-height: 0;
+    /* max-height: 0; */
+    display: none;
     overflow: hidden;
     transition: opacity 0.5s, max-height 0.5s, padding 0.5s;
     color: #4b5563;
     background-color: #fff7ed;
     font-size: 1.333rem;
-    padding: 0 1.5rem;
+    padding: .5rem 1.5rem ;
     text-align: justify;
+}
+
+.show{
+    display: block;
+    opacity: 1;
 }
 
 /* RWD 手機與平板 */

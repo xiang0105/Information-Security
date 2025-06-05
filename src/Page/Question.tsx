@@ -114,7 +114,7 @@ function Question() {
         <div className={style.container}>
             {questionList.map((item, index) => (
               <>
-                <div className={style.questionList}>
+                <div className={style.questionList} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                   <div className={style.item}>{item.question}</div>
                   <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                     <FontAwesomeIcon icon={faPlus} />
@@ -131,7 +131,7 @@ function Question() {
         <div className={style.container}>
             {protectList.map((item, index) => (
               <>
-                <div className={style.questionList}>
+                <div className={style.questionList} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                   <div className={style.item}>{item.question}</div>
                   <div className={style.btn} onClick={() => setOpenIndex(openIndex === index ? null : index)}>
                     <FontAwesomeIcon icon={faPlus} />
