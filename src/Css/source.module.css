@@ -7,7 +7,7 @@
 
 .container{
     display: grid;
-    grid: 1fr / 2fr 6fr 2fr;
+    grid: 1fr / 1fr 6fr 1fr;
 }
 
 .sourceItem{
@@ -27,6 +27,10 @@
 
 .sourceItem a{
     color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 60vw;
 }
 
 
@@ -54,6 +58,10 @@ ul{
         font-size: 1rem;
         overflow: hidden;
         padding: 0.5rem 0;
+    }
+
+    .sourceItem a{
+        text-align: left !important;
     }
 
 }
