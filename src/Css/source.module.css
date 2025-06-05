@@ -7,7 +7,7 @@
 
 .container{
     display: grid;
-    grid: 1fr / 1fr 6fr 1fr;
+    grid: 1fr / 2fr 6fr 2fr;
 }
 
 .sourceItem{
