@@ -9,26 +9,26 @@
 
 ```
 ├── public/ # 靜態資源（不會被編譯）
-├── src/
-    ├── Css/
-    ├── Element/
-    ├── Page/
-    ├── assets/
-    │
-    ├── App.css
-    ├── App.tsx
-    ├── index.css
-    ├── main.tsx
-    └── vite-env.d.ts
-├── index.html # 入口 HTML（由 Vite 提供服務）
-├── package.json # 專案依賴與腳本
-├── package-lock.json # 依賴鎖定
-├── tsconfig.json # TypeScript 設定
+├── src/ # 前端主要程式碼
+│ ├── Css/ # 全域或區域樣式
+│ ├── Element/ # 小型元件 (Components)
+│ ├── Page/ # 頁面級元件
+│ ├── assets/ # 圖片 / icon / 靜態資源
+│ │
+│ ├── App.css # App 根組件樣式
+│ ├── App.tsx # App 根組件
+│ ├── index.css # 全域樣式
+│ ├── main.tsx # React 入口文件
+│ └── vite-env.d.ts # Vite TypeScript 型別定義
+│
+├── index.html # 專案入口 HTML
+├── package.json # 套件管理
+├── package-lock.json # 套件版本鎖定
+├── tsconfig.json # TS 設定
 ├── tsconfig.app.json # App TS 設定
-├── tsconfig.node.json # Node 環境 TS 設定
-├── vite.config.ts # Vite 設定檔
-├── eslint.config.js # ESLint 設定
-└── README.md # 專案說明文件
+├── tsconfig.node.json # Node TS 設定
+├── vite.config.ts # Vite 設定
+└── README.md # 專案說明
 ```
 
 
