@@ -9,8 +9,17 @@
 
 ```
 ├── public/ # 靜態資源（不會被編譯）
-├── src/ # 專案主要程式碼
-│
+├── src/
+    ├── Css/
+    ├── Element/
+    ├── Page/
+    ├── assets/
+    │
+    ├── App.css
+    ├── App.tsx
+    ├── index.css
+    ├── main.tsx
+    └── vite-env.d.ts
 ├── index.html # 入口 HTML（由 Vite 提供服務）
 ├── package.json # 專案依賴與腳本
 ├── package-lock.json # 依賴鎖定
